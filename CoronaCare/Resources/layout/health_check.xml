@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:id="@+id/health_check">
+    
 
     
     <TextView
@@ -92,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="230dp"
         android:layout_marginTop="360dp"
-        android:id="@+id/button1" />
+        android:id="@+id/button2" />
 
     
 
