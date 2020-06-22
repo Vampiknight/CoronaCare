@@ -7,10 +7,93 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
+    
     <TextView
+        android:text="Bitte kreuzen Sie Ihre Symptome an:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello World!" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView1" />
+    <CheckBox
+        android:text="Fieber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/checkBox1" />
+    <CheckBox
+        android:text="trockener Husten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/checkBox2" />
+    <CheckBox
+        android:text="Müdigkeit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp"
+        android:id="@+id/checkBox3" />
+    <CheckBox
+        android:text="Verlust des Geschmackssinns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="140dp"
+        android:id="@+id/checkBox4" />
+    <CheckBox
+        android:text="Verlust des Geruchssinns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="170dp"
+        android:id="@+id/checkBox5" />
+    <CheckBox
+        android:text="Atembeschwerden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        android:id="@+id/checkBox6" />
+    <CheckBox
+        android:text="Gliederschmerzen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="320dp"
+        android:id="@+id/checkBox7" />
+    <CheckBox
+        android:text="Kopfschmerzen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="260dp"
+        android:id="@+id/checkBox8" />
+    <CheckBox
+        android:text="Durchfall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="290dp"
+        android:id="@+id/checkBox9" />
+    <CheckBox
+        android:text="Druckgefühl im Brustbereich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="230dp"
+        android:id="@+id/checkBox10" />
+    <Button
+        android:text="überprüfen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="360dp"
+        android:id="@+id/button1" />
+
+    
 
 </RelativeLayout>

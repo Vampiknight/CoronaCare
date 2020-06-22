@@ -108,7 +108,7 @@ namespace CoronaCare
 
             if (id == Resource.Id.nav_camera)
             {
-                var inflate = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
+                var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_check, rl);
