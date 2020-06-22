@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using Android;
 using Android.App;
 using Android.Content;
@@ -16,6 +17,9 @@ namespace CoronaCare
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+        protected int m_nKlicks = 1;
+        protected int m_nKlicks2 = 1;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -51,7 +55,8 @@ namespace CoronaCare
 
         void OnMyButtonClicked(object sender, EventArgs args)
         {
-
+            Button myButton = (Button)sender;
+            myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
         }
 
         void OnMyButtonClicked2(object sender, EventArgs args)
