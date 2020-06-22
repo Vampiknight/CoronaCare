@@ -40,6 +40,17 @@ namespace CoronaCare
 
         }
 
+        void OnMyButtonClicked(object sender, EventArgs args)
+        {
+
+        }
+
+        void OnMyButtonClicked2(object sender, EventArgs args)
+        {
+            Button mybutton = (Button)sender;
+            mybutton.Text = string.Format("{0} clicks bereits!", m_nKlicks2++);
+        }
+
         public override void OnBackPressed()
         {
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
