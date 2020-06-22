@@ -38,6 +38,15 @@ namespace CoronaCare
             Button myButton = FindViewById<Button>(Resource.Id.button1);
             myButton.Click += OnMyButtonClicked;
 
+            try
+            {
+                Button myButton2 = FindViewById<Button>(Resource.Id.button2);
+                myButton2.Click += OnMyButtonClicked2;
+            }
+            catch
+            {
+
+            }
         }
 
         void OnMyButtonClicked(object sender, EventArgs args)
