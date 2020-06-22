@@ -112,9 +112,7 @@ namespace CoronaCare
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_check, rl);
-
-                Button myButton = FindViewById<Button>(Resource.Id.button1);
-                myButton.Click += OnMyButtonClicked;
+              
             }
             else if (id == Resource.Id.nav_gallery)
             {
