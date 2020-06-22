@@ -11,7 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Hello World!" />
+        android:text="Herzlich Willkommen bei Corona Care:
+        
+        In dieser App können Sie Ihre Symptome mit 
+        den klassischen Symptomen von 
+        COVID19-Erkrankten abgleichen:
+        
+        Viele Grüße Ihr Corona Care-Team" />
     <Button
         android:text="Mein erster Button"
         android:layout_width="wrap_content"

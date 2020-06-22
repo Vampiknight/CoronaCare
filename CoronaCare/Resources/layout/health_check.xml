@@ -48,7 +48,7 @@
         android:id="@+id/checkBox4" />
     <CheckBox
         android:text="Verlust des Geruchssinns"
-        android:layout_width="wrap_content"
+        android:layout_width="208.0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="170dp"
