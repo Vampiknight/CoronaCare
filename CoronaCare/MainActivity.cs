@@ -21,7 +21,15 @@ namespace CoronaCare
         protected int m_nKlicks2 = 1;
 
         protected bool m_bFieber = false;
-        ...
+        protected bool m_bHusten = false;
+        protected bool m_bMüdigkeit = false;
+        protected bool m_bGeschmack = false;
+        protected bool m_bGeruch = false;
+        protected bool m_bAtem = false;
+        protected bool m_bDruck = false;
+        protected bool m_bKopfschmerzen = false;
+        protected bool m_bDurchfall = false;
+        protected bool m_bGlieder = false;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,7 +50,7 @@ namespace CoronaCare
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Button myButton = FindViewById<Button>(Resource.Id.button1);
+            Button myButton = FindViewById<Button>(Resource.Id.buttonCheck);
             myButton.Click += OnMyButtonClicked;
 
             
@@ -54,12 +62,12 @@ namespace CoronaCare
             myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
         }
 
-        void OnMyButtonClickedChecked(object sender, EventArgs args)
+        void OnMyButtonClickedCheck(object sender, EventArgs args)
         {
             //Button mybutton = (Button)sender;
             //mybutton.Text = string.Format("{0} clicks bereits!", m_nKlicks2++);
-            ...
-            Checkmark myCheckFieber=FindViewById<check...> (Resource.Id.button1);
+            CheckBox myCheckFieber = FindViewById<CheckBox> (Resource.Id.checkFieber);
+            m_bFieber = myCheckFieber.Checked;
         }
 
         public override void OnBackPressed()
@@ -110,9 +118,8 @@ namespace CoronaCare
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_check, rl);
                
-                Button myButtonCheck = FindViewById<Button>(Resource.Id.button2);
-                myButtonCheck.Click += OnMyButtonClickedCheck;
-             
+                Button myButtonCheck = FindViewById<Button>(Resource.Id.buttonCheck);
+                myButtonCheck.Click += OnMyButtonClickedCheck;        
                
             }
             else if (id == Resource.Id.nav_gallery)
@@ -128,6 +135,11 @@ namespace CoronaCare
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_evaluation, rl);
+
+
+
+
+
             }
             else if (id == Resource.Id.nav_manage)
             {

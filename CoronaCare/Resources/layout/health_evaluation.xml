@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
-        android:id="@+id/textView2" />
+        android:id="@+id/textDeineSymptome" />
     <TextView
         android:text="Unser Ratschlag für dich:"
         android:textAppearance="?android:attr/textAppearanceLarge"

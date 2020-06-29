@@ -17,77 +17,77 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:id="@+id/textView1" />
+        android:id="@+id/textSymptome" />
     <CheckBox
         android:text="Fieber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
-        android:id="@+id/checkBox1" />
+        android:id="@+id/checkFieber" />
     <CheckBox
         android:text="trockener Husten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="80dp"
-        android:id="@+id/checkBox2" />
+        android:id="@+id/checkHusten" />
     <CheckBox
         android:text="Müdigkeit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="110dp"
-        android:id="@+id/checkBox3" />
+        android:id="@+id/checkMüdigkeit" />
     <CheckBox
         android:text="Verlust des Geschmackssinns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="140dp"
-        android:id="@+id/checkBox4" />
+        android:id="@+id/checkGeschmack" />
     <CheckBox
         android:text="Verlust des Geruchssinns"
         android:layout_width="208.0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="170dp"
-        android:id="@+id/checkBox5" />
+        android:id="@+id/checkGeruchssinn" />
     <CheckBox
         android:text="Atembeschwerden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="200dp"
-        android:id="@+id/checkBox6" />
+        android:id="@+id/checkAtem" />
     <CheckBox
         android:text="Gliederschmerzen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="320dp"
-        android:id="@+id/checkBox7" />
+        android:id="@+id/checkGlieder" />
     <CheckBox
         android:text="Kopfschmerzen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="260dp"
-        android:id="@+id/checkBox8" />
+        android:id="@+id/checkKopfschmerzen" />
     <CheckBox
         android:text="Durchfall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="290dp"
-        android:id="@+id/checkBox9" />
+        android:id="@+id/checkDurchfall" />
     <CheckBox
         android:text="Druckgefühl im Brustbereich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="230dp"
-        android:id="@+id/checkBox10" />
+        android:id="@+id/checkDruckgefühl" />
     <Button
         android:text="überprüfen"
         android:layout_width="wrap_content"
