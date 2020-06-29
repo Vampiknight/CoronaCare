@@ -93,61 +93,62 @@ namespace CoronaCare
             if (m_bFieber == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
-                textDeineSymptome.Text = "Fieber";
+                textDeineSymptome.Text = "Fieber, ";
             }
             if (m_bHusten == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "trockener Husten";
+
+                textDeineSymptome.Text = s + "trockener Husten, ";
             }
             if (m_bMüdigkeit == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Müdigkeit";
+                textDeineSymptome.Text = s + "Müdigkeit, ";
             }
             if (m_bGeschmack == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Verlust des Geschmackssinns";
+                textDeineSymptome.Text = s + "Verlust des Geschmackssinns, ";
             }
             if (m_bGeruch == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Verlust des Geruchssinns";
+                textDeineSymptome.Text = s + "Verlust des Geruchssinns, ";
             }
             if (m_bAtem == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Atembeschwerden";
+                textDeineSymptome.Text = s + "Atembeschwerden, ";
             }
             if (m_bDruck == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Druckgefühl im Brustbereich";
+                textDeineSymptome.Text = s + "Druckgefühl im Brustbereich, ";
             }
             if (m_bKopfschmerzen == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Kopfschmerzen";
+                textDeineSymptome.Text = s + "Kopfschmerzen, ";
             }
             if (m_bDurchfall == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Durchfall";
+                textDeineSymptome.Text = s + "Durchfall, ";
             }
             if (m_bGlieder == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + ", " + "Gliederschmerzen";
+                textDeineSymptome.Text = s + "Gliederschmerzen";
             }
         }
         public override void OnBackPressed()
