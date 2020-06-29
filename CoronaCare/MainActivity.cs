@@ -62,21 +62,94 @@ namespace CoronaCare
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
         {
-            CheckBox myCheckFieber = FindViewById<CheckBox> (Resource.Id.checkFieber);
-            m_bFieber = myCheckFieber.Checked;
+            CheckBox myCheckFieber = FindViewById<CheckBox>(Resource.Id.checkFieber);
+            CheckBox myCheckHusten = FindViewById<CheckBox>(Resource.Id.checkHusten);
+            CheckBox myCheckMüdigkeit = FindViewById<CheckBox>(Resource.Id.checkMüdigkeit);
+            CheckBox myCheckGeschmack = FindViewById<CheckBox>(Resource.Id.checkGeschmack);
+            CheckBox myCheckGeruch = FindViewById<CheckBox>(Resource.Id.checkGeruchssinn);
+            CheckBox myCheckAtem = FindViewById<CheckBox>(Resource.Id.checkAtem);
+            CheckBox myCheckDruck = FindViewById<CheckBox>(Resource.Id.checkDruckgefühl);
+            CheckBox myCheckKopfschmerzen = FindViewById<CheckBox>(Resource.Id.checkKopfschmerzen);
+            CheckBox myCheckDurchfall = FindViewById<CheckBox>(Resource.Id.checkDurchfall);
+            CheckBox myCheckGlieder = FindViewById<CheckBox>(Resource.Id.checkGlieder);
 
-            if (m_bFieber == true)
-                {
-                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
-                textDeineSymptome.Text = "Fieber";
-                }
+            m_bFieber = myCheckFieber.Checked;
+            m_bHusten = myCheckHusten.Checked;
+            m_bMüdigkeit = myCheckMüdigkeit.Checked;
+            m_bGeschmack = myCheckGeschmack.Checked;
+            m_bGeruch = myCheckGeruch.Checked;
+            m_bAtem = myCheckAtem.Checked;
+            m_bDruck = myCheckDruck.Checked;
+            m_bKopfschmerzen = myCheckKopfschmerzen.Checked;
+            m_bDurchfall = myCheckDurchfall.Checked;
+            m_bGlieder = myCheckGlieder.Checked;
+
 
             var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
             RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
             rl.RemoveAllViews();
             inflater.Inflate(Resource.Layout.health_evaluation, rl);
-        }
 
+            if (m_bFieber == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                textDeineSymptome.Text = "Fieber";
+            }
+            if (m_bHusten == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "trockener Husten";
+            }
+            if (m_bMüdigkeit == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Müdigkeit";
+            }
+            if (m_bGeschmack == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Verlust des Geschmackssinns";
+            }
+            if (m_bGeruch == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Verlust des Geruchssinns";
+            }
+            if (m_bAtem == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Atembeschwerden";
+            }
+            if (m_bDruck == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Druckgefühl im Brustbereich";
+            }
+            if (m_bKopfschmerzen == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Kopfschmerzen";
+            }
+            if (m_bDurchfall == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Durchfall";
+            }
+            if (m_bGlieder == true)
+            {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                string s = textDeineSymptome.Text;
+                textDeineSymptome.Text = s + ", " + "Gliederschmerzen";
+            }
+        }
         public override void OnBackPressed()
         {
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
