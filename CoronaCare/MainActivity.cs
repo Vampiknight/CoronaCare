@@ -64,6 +64,17 @@ namespace CoronaCare
         {
             CheckBox myCheckFieber = FindViewById<CheckBox> (Resource.Id.checkFieber);
             m_bFieber = myCheckFieber.Checked;
+
+            if (m_bFieber == true)
+                {
+                TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
+                textDeineSymptome.Text = "Fieber";
+                }
+
+            var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
+            RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
+            rl.RemoveAllViews();
+            inflater.Inflate(Resource.Layout.health_evaluation, rl);
         }
 
         public override void OnBackPressed()
