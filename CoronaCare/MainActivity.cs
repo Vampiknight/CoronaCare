@@ -112,7 +112,6 @@ namespace CoronaCare
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_check, rl);
-              
             }
             else if (id == Resource.Id.nav_gallery)
             {
@@ -123,7 +122,10 @@ namespace CoronaCare
             }
             else if (id == Resource.Id.nav_slideshow)
             {
-
+                var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
+                RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
+                rl.RemoveAllViews();
+                inflater.Inflate(Resource.Layout.health_evaluation, rl);
             }
             else if (id == Resource.Id.nav_manage)
             {
