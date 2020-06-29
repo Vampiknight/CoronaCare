@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +10,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
         android:text="
         Herzlich Willkommen bei Corona Care:
         
@@ -19,10 +20,57 @@
         COVID19-Erkrankten abgleichen:
         
         Viele Grüße Ihr Corona Care-Team" />
-    <Button
-        android:text="Mein erster Button"
+    
+    <TextView
+        android:text="Bitte trage deine Körpertemperatur..."
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button1"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="250dp"
+        android:id="@+id/textView1" />
+
+    <EditText
+        android:inputType="numberDecimal"
+        android:layout_width="222.5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="280dp"
+        android:id="@+id/txtKörpertemp"
+        android:hint="z.B. 37.5" />
+    <TextView
+        android:text="... und das heutige Datum ein."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="340dp"
+        android:id="@+id/textView2" /> 
+
+    <EditText
+        android:inputType="date"
+        android:layout_width="168.0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="360dp"
+        android:id="@+id/txtDatum"
+        android:hint="z.B. 29.06.2020" />
+
+    <CheckBox
+        android:text="Einwilligung zur Datenübermittlung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="420dp"
+        android:id="@+id/checkEinwilligung" />
+
+    
+    <Button
+        android:text="Daten Übermitteln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="460dp"
+        android:id="@+id/btnübermitteln" />
 
 </RelativeLayout>
