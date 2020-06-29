@@ -20,6 +20,9 @@ namespace CoronaCare
         protected int m_nKlicks = 1;
         protected int m_nKlicks2 = 1;
 
+        protected bool m_bFieber = false;
+        ...
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -42,15 +45,7 @@ namespace CoronaCare
             Button myButton = FindViewById<Button>(Resource.Id.button1);
             myButton.Click += OnMyButtonClicked;
 
-            try
-            {
-                Button myButton2 = FindViewById<Button>(Resource.Id.button2);
-                myButton2.Click += OnMyButtonClicked2;
-            }
-            catch
-            {
-
-            }
+            
         }
 
         void OnMyButtonClicked(object sender, EventArgs args)
@@ -59,10 +54,12 @@ namespace CoronaCare
             myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
         }
 
-        void OnMyButtonClicked2(object sender, EventArgs args)
+        void OnMyButtonClickedChecked(object sender, EventArgs args)
         {
-            Button mybutton = (Button)sender;
-            mybutton.Text = string.Format("{0} clicks bereits!", m_nKlicks2++);
+            //Button mybutton = (Button)sender;
+            //mybutton.Text = string.Format("{0} clicks bereits!", m_nKlicks2++);
+            ...
+            Checkmark myCheckFieber=FindViewById<check...> (Resource.Id.button1);
         }
 
         public override void OnBackPressed()
@@ -112,6 +109,11 @@ namespace CoronaCare
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_check, rl);
+               
+                Button myButtonCheck = FindViewById<Button>(Resource.Id.button2);
+                myButtonCheck.Click += OnMyButtonClickedCheck;
+             
+               
             }
             else if (id == Resource.Id.nav_gallery)
             {

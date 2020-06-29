@@ -3362,7 +3362,7 @@ namespace CoronaCare
 			public const int button1 = 2131230760;
 			
 			// aapt resource value: 0x7F080029
-			public const int button2 = 2131230761;
+			public const int buttonCheck = 2131230761;
 			
 			// aapt resource value: 0x7F08002A
 			public const int buttonPanel = 2131230762;
