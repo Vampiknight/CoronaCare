@@ -50,10 +50,8 @@ namespace CoronaCare
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Button myButton = FindViewById<Button>(Resource.Id.buttonCheck);
+            Button myButton = FindViewById<Button>(Resource.Id.button1);
             myButton.Click += OnMyButtonClicked;
-
-            
         }
 
         void OnMyButtonClicked(object sender, EventArgs args)
@@ -64,8 +62,6 @@ namespace CoronaCare
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
         {
-            //Button mybutton = (Button)sender;
-            //mybutton.Text = string.Format("{0} clicks bereits!", m_nKlicks2++);
             CheckBox myCheckFieber = FindViewById<CheckBox> (Resource.Id.checkFieber);
             m_bFieber = myCheckFieber.Checked;
         }
@@ -119,8 +115,7 @@ namespace CoronaCare
                 inflater.Inflate(Resource.Layout.health_check, rl);
                
                 Button myButtonCheck = FindViewById<Button>(Resource.Id.buttonCheck);
-                myButtonCheck.Click += OnMyButtonClickedCheck;        
-               
+                myButtonCheck.Click += OnMyButtonClickedCheck;                  
             }
             else if (id == Resource.Id.nav_gallery)
             {
@@ -128,6 +123,9 @@ namespace CoronaCare
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.content_main, rl);
+
+                Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
+                myButtonCheck.Click += OnMyButtonClicked;
             }
             else if (id == Resource.Id.nav_slideshow)
             {
@@ -135,11 +133,6 @@ namespace CoronaCare
                 RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.health_evaluation, rl);
-
-
-
-
-
             }
             else if (id == Resource.Id.nav_manage)
             {
