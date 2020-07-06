@@ -39,6 +39,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="280dp"
-        android:id="@+id/textView4" />
+        android:id="@+id/textDeineRatschlaege" />
 
 </RelativeLayout>

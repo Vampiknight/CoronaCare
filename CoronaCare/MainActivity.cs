@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Net;
-using System.Reflection;
 using Android;
-using System.IO;
-using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -14,20 +11,14 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using Org.Apache.Http.Protocol;
 
 namespace CoronaCare
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        protected int m_nKlicks = 1;
-        protected int m_nKlicks2 = 1;
-
-        protected string m_körpertemp;
-        protected string m_datum;
-        protected bool m_unterschrift;
-        protected string webseite;
+       // protected int m_nKlicks = 1;
+       // protected int m_nKlicks2 = 1;
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -39,6 +30,8 @@ namespace CoronaCare
         protected bool m_bKopfschmerzen = false;
         protected bool m_bDurchfall = false;
         protected bool m_bGlieder = false;
+
+        int counterCheck;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -59,34 +52,16 @@ namespace CoronaCare
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Button myButton = FindViewById<Button>(Resource.Id.btnübermitteln);
+            Button myButton = FindViewById<Button>(Resource.Id.button1);
             myButton.Click += OnMyButtonClicked;
         }
 
         void OnMyButtonClicked(object sender, EventArgs args)
         {
-            //Button myButton = (Button)sender;
-            //myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
-
-            TextView körpertemp = FindViewById<TextView>(Resource.Id.txtKörpertemp);
-            TextView datum = FindViewById<TextView>(Resource.Id.txtDatum);
-            CheckBox unterschrift = FindViewById<CheckBox>(Resource.Id.checkEinwilligung);
-
-            m_körpertemp = körpertemp.Text;
-            m_datum = datum.Text;
-            m_unterschrift = unterschrift.Checked;
-
-            webseite = "http://localhost:50889/myTemp?körpertemp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
-
-            TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);           
-            textWillkommen.Text = webseite;
-
-            WebRequest request = WebRequest.Create("http://localhost:54398/myTemp?temp=39&datum=28.06.2020&unterschrift=true");
-            request.Method = "POST";
-            WebResponse response = request.GetResponse();
-            
+           // Button myButton = (Button)sender;
+           // myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
         }
-        
+
         void OnMyButtonClickedCheck(object sender, EventArgs args)
         {
             CheckBox myCheckFieber = FindViewById<CheckBox>(Resource.Id.checkFieber);
@@ -111,6 +86,8 @@ namespace CoronaCare
             m_bDurchfall = myCheckDurchfall.Checked;
             m_bGlieder = myCheckGlieder.Checked;
 
+            counterCheck = 0;
+
             var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
             RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
             rl.RemoveAllViews();
@@ -120,61 +97,104 @@ namespace CoronaCare
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 textDeineSymptome.Text = "Fieber, ";
+                counterCheck++;
             }
             if (m_bHusten == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
+
                 textDeineSymptome.Text = s + "trockener Husten, ";
+                counterCheck++;
             }
             if (m_bMüdigkeit == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Müdigkeit, ";
+                counterCheck++;
             }
             if (m_bGeschmack == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Verlust des Geschmackssinns, ";
+                counterCheck++;
             }
             if (m_bGeruch == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Verlust des Geruchssinns, ";
+                counterCheck++;
             }
             if (m_bAtem == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Atembeschwerden, ";
+                counterCheck++;
             }
             if (m_bDruck == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Druckgefühl im Brustbereich, ";
+                counterCheck++;
             }
             if (m_bKopfschmerzen == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Kopfschmerzen, ";
+                counterCheck++;
             }
             if (m_bDurchfall == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Durchfall, ";
+                counterCheck++;
             }
             if (m_bGlieder == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
                 textDeineSymptome.Text = s + "Gliederschmerzen";
+                counterCheck++;
             }
+            
+            if(counterCheck == 0)
+            {
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                textDeineRatschlaege.Text = "Sie sind gesund.";
+            }
+
+            if (counterCheck == 1)
+            {
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                textDeineRatschlaege.Text = "Sie müssen sich schonen und bei wiederholten auftreten des Symptoms, denn Arzt Konsultieren.";
+            }
+
+            if (counterCheck == 2)
+            {
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                textDeineRatschlaege.Text = "Schonen Sie sich und konsultieren sie ihren Arzt bei Verschlechterung der Symptome.";
+            }
+
+            if (counterCheck == 3)
+            {
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                textDeineRatschlaege.Text = "Es wird geraten schnellstmöglich ihren Hausarzt zu Konsultieren.";
+            }
+
+            if (counterCheck > 4)
+            {
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist Kritisch und sollte Untersucht werden.";
+            }
+
+
         }
         public override void OnBackPressed()
         {
@@ -234,8 +254,8 @@ namespace CoronaCare
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.content_main, rl);
 
-                //Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
-                //myButtonCheck.Click += OnMyButtonClicked;
+                Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
+                myButtonCheck.Click += OnMyButtonClicked;
             }
             else if (id == Resource.Id.nav_slideshow)
             {
