@@ -24,7 +24,7 @@ namespace CoronaCare
         protected string m_datum;
         protected bool m_unterschrift;
         protected string webseite;
-
+        protected int counterCheck;
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -35,9 +35,7 @@ namespace CoronaCare
         protected bool m_bDruck = false;
         protected bool m_bKopfschmerzen = false;
         protected bool m_bDurchfall = false;
-        protected bool m_bGlieder = false;
-
-        int counterCheck;
+        protected bool m_bGlieder = false;      
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -58,7 +56,7 @@ namespace CoronaCare
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Button myButton = FindViewById<Button>(Resource.Id.button1);
+            Button myButton = FindViewById<Button>(Resource.Id.btnübermitteln);
             myButton.Click += OnMyButtonClicked;
         }
 
@@ -70,6 +68,7 @@ namespace CoronaCare
             TextView körpertemp = FindViewById<TextView>(Resource.Id.txtKörpertemp);
             TextView datum = FindViewById<TextView>(Resource.Id.txtDatum);
             CheckBox unterschrift = FindViewById<CheckBox>(Resource.Id.checkEinwilligung);
+
             m_körpertemp = körpertemp.Text;
             m_datum = datum.Text;
             m_unterschrift = unterschrift.Checked;
@@ -79,9 +78,9 @@ namespace CoronaCare
             TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);
             textWillkommen.Text = webseite;
 
-            WebRequest request = WebRequest.Create("http://localhost:54398/myTemp?temp=39&datum=28.06.2020&unterschrift=true");
-            request.Method = "POST";
-            WebResponse response = request.GetResponse();
+            // WebRequest request = WebRequest.Create("http://localhost:54398/myTemp?temp=39&datum=28.06.2020&unterschrift=true");
+            // request.Method = "POST";
+            // WebResponse response = request.GetResponse();
         }
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
@@ -125,7 +124,6 @@ namespace CoronaCare
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-
                 textDeineSymptome.Text = s + "trockener Husten, ";
                 counterCheck++;
             }
@@ -195,7 +193,7 @@ namespace CoronaCare
             if (counterCheck == 1)
             {
                 TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
-                textDeineRatschlaege.Text = "Sie müssen sich schonen und bei wiederholten auftreten des Symptoms, denn Arzt Konsultieren.";
+                textDeineRatschlaege.Text = "Sie müssen sich schonen und bei wiederholten auftreten des Symptoms, denn Arzt konsultieren.";
             }
 
             if (counterCheck == 2)
@@ -207,13 +205,13 @@ namespace CoronaCare
             if (counterCheck == 3)
             {
                 TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
-                textDeineRatschlaege.Text = "Es wird geraten schnellstmöglich ihren Hausarzt zu Konsultieren.";
+                textDeineRatschlaege.Text = "Es wird geraten schnellstmöglich ihren Hausarzt zu konsultieren.";
             }
 
             if (counterCheck > 4)
             {
                 TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
-                textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist Kritisch und sollte Untersucht werden.";
+                textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist kritisch und sollte Untersucht werden.";
             }
 
 
@@ -276,8 +274,8 @@ namespace CoronaCare
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.content_main, rl);
 
-                Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
-                myButtonCheck.Click += OnMyButtonClicked;
+                // Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
+                // myButtonCheck.Click += OnMyButtonClicked;
             }
             else if (id == Resource.Id.nav_slideshow)
             {
