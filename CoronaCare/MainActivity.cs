@@ -17,8 +17,14 @@ namespace CoronaCare
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-       // protected int m_nKlicks = 1;
-       // protected int m_nKlicks2 = 1;
+        //protected int m_nKlicks = 1;
+        //protected int m_nKlicks2 = 1;
+
+        protected string m_körpertemp;
+        protected string m_datum;
+        protected bool m_unterschrift;
+        protected string webseite;
+
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -58,8 +64,24 @@ namespace CoronaCare
 
         void OnMyButtonClicked(object sender, EventArgs args)
         {
-           // Button myButton = (Button)sender;
-           // myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
+            // Button myButton = (Button)sender;
+            // myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
+
+            TextView körpertemp = FindViewById<TextView>(Resource.Id.txtKörpertemp);
+            TextView datum = FindViewById<TextView>(Resource.Id.txtDatum);
+            CheckBox unterschrift = FindViewById<CheckBox>(Resource.Id.checkEinwilligung);
+            m_körpertemp = körpertemp.Text;
+            m_datum = datum.Text;
+            m_unterschrift = unterschrift.Checked;
+
+            webseite = "http://localhost:50889/myTemp?körpertemp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
+
+            TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);
+            textWillkommen.Text = webseite;
+
+            WebRequest request = WebRequest.Create("http://localhost:54398/myTemp?temp=39&datum=28.06.2020&unterschrift=true");
+            request.Method = "POST";
+            WebResponse response = request.GetResponse();
         }
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
