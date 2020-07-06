@@ -17,8 +17,8 @@ namespace CoronaCare
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        //protected int m_nKlicks = 1;
-        //protected int m_nKlicks2 = 1;
+        protected int m_nKlicks = 1;
+        protected int m_nKlicks2 = 1;
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -50,14 +50,14 @@ namespace CoronaCare
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Button myButton = FindViewById<Button>(Resource.Id.button1);
+            Button myButton = FindViewById<Button>(Resource.Id.btnübermitteln);
             myButton.Click += OnMyButtonClicked;
         }
 
         void OnMyButtonClicked(object sender, EventArgs args)
         {
-            //Button myButton = (Button)sender;
-            //myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
+            Button myButton = (Button)sender;
+            myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
         }
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
