@@ -17,8 +17,8 @@ namespace CoronaCare
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        protected int m_nKlicks = 1;
-        protected int m_nKlicks2 = 1;
+        //protected int m_nKlicks = 1;
+        //protected int m_nKlicks2 = 1;
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -56,8 +56,8 @@ namespace CoronaCare
 
         void OnMyButtonClicked(object sender, EventArgs args)
         {
-            Button myButton = (Button)sender;
-            myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
+            //Button myButton = (Button)sender;
+            //myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
         }
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
@@ -83,7 +83,6 @@ namespace CoronaCare
             m_bKopfschmerzen = myCheckKopfschmerzen.Checked;
             m_bDurchfall = myCheckDurchfall.Checked;
             m_bGlieder = myCheckGlieder.Checked;
-
 
             var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
             RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
