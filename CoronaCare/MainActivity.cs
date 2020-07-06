@@ -166,31 +166,31 @@ namespace CoronaCare
             
             if(counterCheck == 0)
             {
-                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
                 textDeineRatschlaege.Text = "Sie sind gesund.";
             }
 
             if (counterCheck == 1)
             {
-                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
                 textDeineRatschlaege.Text = "Sie müssen sich schonen und bei wiederholten auftreten des Symptoms, denn Arzt Konsultieren.";
             }
 
             if (counterCheck == 2)
             {
-                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
                 textDeineRatschlaege.Text = "Schonen Sie sich und konsultieren sie ihren Arzt bei Verschlechterung der Symptome.";
             }
 
             if (counterCheck == 3)
             {
-                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
                 textDeineRatschlaege.Text = "Es wird geraten schnellstmöglich ihren Hausarzt zu Konsultieren.";
             }
 
             if (counterCheck > 4)
             {
-                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textDeineRatschlaege);
+                TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
                 textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist Kritisch und sollte Untersucht werden.";
             }
 
