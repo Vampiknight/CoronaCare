@@ -2,6 +2,8 @@
 using System.Net;
 using System.Reflection;
 using Android;
+using System.IO;
+using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,6 +14,7 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Org.Apache.Http.Protocol;
 
 namespace CoronaCare
 {
@@ -73,15 +76,17 @@ namespace CoronaCare
             m_datum = datum.Text;
             m_unterschrift = unterschrift.Checked;
 
-            webseite = "localhost:xxxxx/myTemp?körpertemp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
+            webseite = "http://localhost:50889/myTemp?körpertemp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
 
             TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);           
             textWillkommen.Text = webseite;
 
-            WebRequest request = WebRequest.Create(webseite);
+            WebRequest request = WebRequest.Create("http://localhost:54398/myTemp?temp=39&datum=28.06.2020&unterschrift=true");
             request.Method = "POST";
+            WebResponse response = request.GetResponse();
+            
         }
-
+        
         void OnMyButtonClickedCheck(object sender, EventArgs args)
         {
             CheckBox myCheckFieber = FindViewById<CheckBox>(Resource.Id.checkFieber);
