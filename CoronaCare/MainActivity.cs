@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Reflection;
 using Android;
 using Android.App;
 using Android.Content;
@@ -19,6 +20,11 @@ namespace CoronaCare
     {
         protected int m_nKlicks = 1;
         protected int m_nKlicks2 = 1;
+
+        protected string m_körpertemp;
+        protected string m_datum;
+        protected bool m_unterschrift;
+        protected string webseite;
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -56,8 +62,24 @@ namespace CoronaCare
 
         void OnMyButtonClicked(object sender, EventArgs args)
         {
-            Button myButton = (Button)sender;
-            myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
+            //Button myButton = (Button)sender;
+            //myButton.Text = string.Format("{0} clicks bereits!", m_nKlicks++);
+
+            TextView körpertemp = FindViewById<TextView>(Resource.Id.txtKörpertemp);
+            TextView datum = FindViewById<TextView>(Resource.Id.txtDatum);
+            CheckBox unterschrift = FindViewById<CheckBox>(Resource.Id.checkEinwilligung);
+
+            m_körpertemp = körpertemp.Text;
+            m_datum = datum.Text;
+            m_unterschrift = unterschrift.Checked;
+
+            webseite = "localhost:xxxxx/myTemp?körpertemp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
+
+            TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);           
+            textWillkommen.Text = webseite;
+
+            WebRequest request = WebRequest.Create(webseite);
+            request.Method = "POST";
         }
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
@@ -98,7 +120,6 @@ namespace CoronaCare
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-
                 textDeineSymptome.Text = s + "trockener Husten, ";
             }
             if (m_bMüdigkeit == true)
@@ -208,8 +229,8 @@ namespace CoronaCare
                 rl.RemoveAllViews();
                 inflater.Inflate(Resource.Layout.content_main, rl);
 
-                Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
-                myButtonCheck.Click += OnMyButtonClicked;
+                //Button myButtonCheck = FindViewById<Button>(Resource.Id.button1);
+                //myButtonCheck.Click += OnMyButtonClicked;
             }
             else if (id == Resource.Id.nav_slideshow)
             {
