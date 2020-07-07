@@ -89,7 +89,7 @@ namespace CoronaCare
                 //textWillkommen.Text = e.Message;
             }
         }
-
+        //test
         void OnMyButtonClickedCheck(object sender, EventArgs args)
         {
             CheckBox myCheckFieber = FindViewById<CheckBox>(Resource.Id.checkFieber);
