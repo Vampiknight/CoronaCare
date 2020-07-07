@@ -73,12 +73,12 @@ namespace CoronaCare
             m_datum = datum.Text;
             m_unterschrift = unterschrift.Checked;
 
-            webseite = "http://localhost:50889/myTemp?körpertemp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
+            webseite = "http://10.0.2.2:51979/myTemp?temp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
 
-            TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);
-            textWillkommen.Text = webseite;
+            //TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);
+            //textWillkommen.Text = webseite;
 
-            WebRequest request = WebRequest.Create("http://10.0.2.2:51979/myTemp?temp=80&datum=21.06.2020&unterschrift=True");
+            WebRequest request = WebRequest.Create(webseite);
             request.Method = "POST";
             try
             {
@@ -86,7 +86,7 @@ namespace CoronaCare
             }
             catch (Exception e)
             {
-                textWillkommen.Text = e.Message;
+                //textWillkommen.Text = e.Message;
             }
         }
 
