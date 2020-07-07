@@ -116,6 +116,21 @@ namespace CoronaCare
 
             counterCheck = 0;
 
+            webseitesymptome = "http://10.0.2.2:51979/mySym?fieber=" + m_bFieber + "&husten=" + m_bHusten + "&muedigkeit=" + m_bMüdigkeit + 
+                "&geschmack=" + m_bGeschmack + "&geruch=" + m_bGeruch + "&atem=" + m_bAtem + "&druck=" + m_bDruck + "&kopfschmerzen=" + m_bKopfschmerzen + 
+                "&durchfall=" + m_bDurchfall + "&glieder=" + m_bGlieder;
+
+            WebRequest request = WebRequest.Create(webseitesymptome);
+            request.Method = "POST";
+            try
+            {
+                WebResponse response = request.GetResponse();
+            }
+            catch (Exception e)
+            {
+                //textWillkommen.Text = e.Message;
+            }
+
             var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
             RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
             rl.RemoveAllViews();
