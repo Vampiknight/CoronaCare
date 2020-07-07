@@ -24,7 +24,9 @@ namespace CoronaCare
         protected string m_datum;
         protected bool m_unterschrift;
         protected string webseite;
+        protected string webseitesymptome;
         protected int counterCheck;
+        protected int personenid;
 
         protected bool m_bFieber = false;
         protected bool m_bHusten = false;
@@ -114,11 +116,12 @@ namespace CoronaCare
             m_bDurchfall = myCheckDurchfall.Checked;
             m_bGlieder = myCheckGlieder.Checked;
 
+            personenid = 1;
             counterCheck = 0;
 
             webseitesymptome = "http://10.0.2.2:51979/mySym?fieber=" + m_bFieber + "&husten=" + m_bHusten + "&muedigkeit=" + m_bMüdigkeit + 
                 "&geschmack=" + m_bGeschmack + "&geruch=" + m_bGeruch + "&atem=" + m_bAtem + "&druck=" + m_bDruck + "&kopfschmerzen=" + m_bKopfschmerzen + 
-                "&durchfall=" + m_bDurchfall + "&glieder=" + m_bGlieder;
+                "&durchfall=" + m_bDurchfall + "&glieder=" + m_bGlieder+ "&id=" + personenid;
 
             WebRequest request = WebRequest.Create(webseitesymptome);
             request.Method = "POST";
