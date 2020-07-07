@@ -193,7 +193,7 @@ namespace CoronaCare
             if (counterCheck == 1)
             {
                 TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
-                textDeineRatschlaege.Text = "Sie müssen sich schonen und bei wiederholten auftreten des Symptoms, denn Arzt konsultieren.";
+                textDeineRatschlaege.Text = "Sie müssen sich schonen und bei wiederholten auftreten des Symptoms, den Arzt konsultieren.";
             }
 
             if (counterCheck == 2)
@@ -211,7 +211,7 @@ namespace CoronaCare
             if (counterCheck >= 4)
             {
                 TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
-                textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist kritisch und sollte Untersucht werden.";
+                textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist kritisch und sollte untersucht werden.";
             }
 
 
