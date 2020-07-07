@@ -78,9 +78,16 @@ namespace CoronaCare
             TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);
             textWillkommen.Text = webseite;
 
-            // WebRequest request = WebRequest.Create("http://localhost:54398/myTemp?temp=39&datum=28.06.2020&unterschrift=true");
-            // request.Method = "POST";
-            // WebResponse response = request.GetResponse();
+            WebRequest request = WebRequest.Create("http://10.0.2.2:51979/myTemp?temp=80&datum=21.06.2020&unterschrift=True");
+            request.Method = "POST";
+            try
+            {
+                WebResponse response = request.GetResponse();
+            }
+            catch (Exception e)
+            {
+                textWillkommen.Text = e.Message;
+            }
         }
 
         void OnMyButtonClickedCheck(object sender, EventArgs args)
