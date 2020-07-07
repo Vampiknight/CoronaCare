@@ -208,7 +208,7 @@ namespace CoronaCare
                 textDeineRatschlaege.Text = "Es wird geraten schnellstmöglich ihren Hausarzt zu konsultieren.";
             }
 
-            if (counterCheck > 4)
+            if (counterCheck >= 4)
             {
                 TextView textDeineRatschlaege = FindViewById<TextView>(Resource.Id.textView4);
                 textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist kritisch und sollte untersucht werden.";
