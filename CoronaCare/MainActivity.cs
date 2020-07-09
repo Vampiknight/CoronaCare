@@ -75,7 +75,7 @@ namespace CoronaCare
             m_datum = datum.Text;
             m_unterschrift = unterschrift.Checked;
 
-            webseite = "http://10.0.2.2:51979/myTemp?temp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
+            webseite = "http://10.0.2.2:8000/myTemp?temp=" + m_körpertemp + "&datum=" + m_datum + "&unterschrift=" + m_unterschrift;
 
             //TextView textWillkommen = FindViewById<TextView>(Resource.Id.textwillkommen);
             //textWillkommen.Text = webseite;
@@ -119,7 +119,7 @@ namespace CoronaCare
             personenid = 1;
             counterCheck = 0;
 
-            webseitesymptome = "http://10.0.2.2:51979/mySym?fieber=" + m_bFieber + "&husten=" + m_bHusten + "&muedigkeit=" + m_bMüdigkeit + 
+            webseitesymptome = "http://10.0.2.2:8000/mySym?fieber=" + m_bFieber + "&husten=" + m_bHusten + "&muedigkeit=" + m_bMüdigkeit + 
                 "&geschmack=" + m_bGeschmack + "&geruch=" + m_bGeruch + "&atem=" + m_bAtem + "&druck=" + m_bDruck + "&kopfschmerzen=" + m_bKopfschmerzen + 
                 "&durchfall=" + m_bDurchfall + "&glieder=" + m_bGlieder+ "&id=" + personenid;
 
