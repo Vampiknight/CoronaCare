@@ -311,7 +311,10 @@ namespace CoronaCare
             }
             else if (id == Resource.Id.nav_manage)
             {
-
+                var inflater = Application.Context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
+                RelativeLayout rl = FindViewById<RelativeLayout>(Resource.Id.content);
+                rl.RemoveAllViews();
+                inflater.Inflate(Resource.Layout.impressum, rl);
             }
             else if (id == Resource.Id.nav_share)
             {

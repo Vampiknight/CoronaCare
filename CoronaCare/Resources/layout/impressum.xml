@@ -1,0 +1,31 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:gravity="left"
+        
+        android:text="
+        Herzlich Willkommen bei Corona Care: &#10; &#10;&#10;&#10;
+        In dieser App können Sie Ihre Symptome mit den &#10;&#10;
+        klassischen Symptomen von COVID19-Erkrankten &#10;&#10;
+        abgleichen. &#10; &#10;&#10;&#10;
+        Diese App wurde entwickelt von Studenten der &#10;&#10;
+        Hochschule Aalen in dem Modul App-Projekt im &#10;&#10;
+        Sommersemester 2020, aufgrund der aktuellen &#10;&#10;
+        Corona-Pandemie. &#10;&#10;&#10;&#10;
+        Viel Spaß beim Benutzen der App! &#10;&#10;&#10;&#10;
+        Ihr Corona Care-Team"
+        
+        android:id="@+id/textwillkommen" />
+    
+  
+</RelativeLayout>

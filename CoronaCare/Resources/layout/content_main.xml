@@ -10,15 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="5dp"
         android:text="
-        Herzlich Willkommen bei Corona Care:
-        
-        In dieser App können Sie Ihre Symptome mit 
-        den klassischen Symptomen von 
-        COVID19-Erkrankten abgleichen:
-        
-        Viele Grüße Ihr Corona Care-Team"
+        Herzlich Willkommen bei Corona Care!"
         android:id="@+id/textwillkommen" />
     
     <TextView
@@ -26,16 +20,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/textView1" />
 
     <EditText
         android:inputType="numberDecimal"
         android:layout_width="222.5dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="80dp"
         android:id="@+id/txtKörpertemp"
         android:hint="z.B. 37.5" />
     <TextView
@@ -43,16 +37,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="150dp"
         android:id="@+id/textView2" /> 
 
     <EditText
         android:inputType="date"
         android:layout_width="168.0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="180dp"
         android:id="@+id/txtDatum"
         android:hint="z.B. 29.06.2020" />
 
@@ -60,8 +54,8 @@
         android:text="Einwilligung zur Datenübermittlung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="240dp"
         android:id="@+id/checkEinwilligung" />
 
     
@@ -69,8 +63,8 @@
         android:text="Daten Übermitteln"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="290dp"
         android:id="@+id/btnübermitteln" />
 
 </RelativeLayout>
