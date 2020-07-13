@@ -231,7 +231,6 @@ namespace CoronaCare
                 textDeineRatschlaege.Text = "Gehen sie umgehend zu ihren Hausarzt, die Angelegenheit ist kritisch und sollte untersucht werden.";
             }
 
-
         }
         public override void OnBackPressed()
         {
