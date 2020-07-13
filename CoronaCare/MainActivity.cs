@@ -134,63 +134,63 @@ namespace CoronaCare
             if (m_bFieber == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
-                textDeineSymptome.Text = "Fieber \n ";
+                textDeineSymptome.Text = "Fieber \n";
                 counterCheck++;
             }
             if (m_bHusten == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "trockener Husten \n ";
+                textDeineSymptome.Text = s + "trockener Husten \n";
                 counterCheck++;
             }
             if (m_bMüdigkeit == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Müdigkeit \n ";
+                textDeineSymptome.Text = s + "Müdigkeit \n";
                 counterCheck++;
             }
             if (m_bGeschmack == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Verlust des Geschmackssinns \n ";
+                textDeineSymptome.Text = s + "Verlust des Geschmackssinns \n";
                 counterCheck++;
             }
             if (m_bGeruch == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Verlust des Geruchssinns \n ";
+                textDeineSymptome.Text = s + "Verlust des Geruchssinns \n";
                 counterCheck++;
             }
             if (m_bAtem == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Atembeschwerden \n ";
+                textDeineSymptome.Text = s + "Atembeschwerden \n";
                 counterCheck++;
             }
             if (m_bDruck == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Druckgefühl im Brustbereich \n ";
+                textDeineSymptome.Text = s + "Druckgefühl im Brustbereich \n";
                 counterCheck++;
             }
             if (m_bKopfschmerzen == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Kopfschmerzen \n ";
+                textDeineSymptome.Text = s + "Kopfschmerzen \n";
                 counterCheck++;
             }
             if (m_bDurchfall == true)
             {
                 TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                 string s = textDeineSymptome.Text;
-                textDeineSymptome.Text = s + "Durchfall \n ";
+                textDeineSymptome.Text = s + "Durchfall \n";
                 counterCheck++;
             }
             if (m_bGlieder == true)
@@ -343,49 +343,49 @@ namespace CoronaCare
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Müdigkeit \n ";
+                    textDeineSymptome.Text = s + "Müdigkeit \n";
                     counterCheck++;
                 }
                 if (m_bGeschmack == true)
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Verlust des Geschmackssinns \n ";
+                    textDeineSymptome.Text = s + "Verlust des Geschmackssinns \n";
                     counterCheck++;
                 }
                 if (m_bGeruch == true)
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Verlust des Geruchssinns \n ";
+                    textDeineSymptome.Text = s + "Verlust des Geruchssinns \n";
                     counterCheck++;
                 }
                 if (m_bAtem == true)
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Atembeschwerden \n ";
+                    textDeineSymptome.Text = s + "Atembeschwerden \n";
                     counterCheck++;
                 }
                 if (m_bDruck == true)
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Druckgefühl im Brustbereich \n ";
+                    textDeineSymptome.Text = s + "Druckgefühl im Brustbereich \n";
                     counterCheck++;
                 }
                 if (m_bKopfschmerzen == true)
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Kopfschmerzen \n ";
+                    textDeineSymptome.Text = s + "Kopfschmerzen \n";
                     counterCheck++;
                 }
                 if (m_bDurchfall == true)
                 {
                     TextView textDeineSymptome = FindViewById<TextView>(Resource.Id.textDeineSymptome);
                     string s = textDeineSymptome.Text;
-                    textDeineSymptome.Text = s + "Durchfall \n ";
+                    textDeineSymptome.Text = s + "Durchfall \n";
                     counterCheck++;
                 }
                 if (m_bGlieder == true)
